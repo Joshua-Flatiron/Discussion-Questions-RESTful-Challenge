@@ -1,0 +1,16 @@
+<h1> <%= @project.name %> </h1>
+
+<p><%= @project.information %></p>
+
+<%= link_to "Go Back to Index", projects_path %>
+
+<%= link_to "Update This Project", edit_project_path(@project) %>
+
+
+<!-- <%= form_tag(projects_path) %> -->
+   
+<!-- <%= button_to "Delete Project"%> -->
+
+<%= form_for(@project, :method => :delete, :remote => true) do |f| %>
+<%= f.submit :value => "Delete" %>
+<% end %>
